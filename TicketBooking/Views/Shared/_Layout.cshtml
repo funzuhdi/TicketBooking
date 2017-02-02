@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/images/ptmn.ico" rel="SHORTCUT ICON" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href='@Url.Action("Index","Home", new { area = "" })'><img src="~/Content/images/logo_hadir.jpg"></a>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                </ul>
+                <ul class="nav navbar-header navbar-right">
+                    <li><a class="navbar-brand" href='@Url.Action("Index","Home", new { area = "" })'><img src="~/Content/images/pelita.png"></a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <div id="footer">
+            <div class="ptmn-line">
+                <div class="col-left">
+                    <div class="ptmn-red-hr">
+                    </div>
+                </div>
+                <div class="col-middle">
+                    <div class="ptmn-green-hr">
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="ptmn-blue-hr">
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <strong>Corporate Shared Service</strong><br />
+                Jalan Raya Kilang Putri Tujuh Dumai, ZIP Code 28815<br />
+                Pertamina RU II Main Office, 1st Floor<br />
+                E-mail : <a href="mailto:servicedesk@pertamina.com">Service Desk</a><br />
+            </div>
+            <div class="right">
+                <strong>&copy; @DateTime.Now.Year PT. PERTAMINA (PERSERO) REFERY UNIT II</strong><br />
+                Jalan Raya Kilang Putri Tujuh Dumai, ZIP Code 28815<br />
+                Phone : (0765) 31244 (Hunting) - Fax : (0765) 36849 <br />
+                E-mail : <a href="mailto:pippru2@pertamina.com">Pertamina RU II Contact Center</a><br />
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
